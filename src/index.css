@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  /* Definisikan warna di sini */
+  --color-brand: #064E3B;
+  --color-brand-light: #ECF2F0;
+  --color-brand-dark: #022C22;
+  
+  --color-corporate: #1E293B;
+  --color-corporate-light: #334155;
+  --color-corporate-dark: #0F172A;
+  
+  --color-accent-cream: #F5E6D3;
+  --color-accent-gold: #D97706;
+  --color-accent-earth: #78350F;
+  
+  --color-whatsapp: #25D366;
+  --color-surface: #F8FAF8;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-corporate antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight text-corporate-dark;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
