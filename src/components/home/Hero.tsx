@@ -20,7 +20,7 @@ const slides = [
 
 const Hero = () => {
   return (
-    <section className="relative h-screen w-full">
+    <section id="home" className="relative h-screen w-full">
       <Swiper modules={[Autoplay, EffectFade, Pagination]} effect="fade" autoplay={{ delay: 5000, disableOnInteraction: false }} pagination={{ clickable: true }} className="h-full w-full">
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>

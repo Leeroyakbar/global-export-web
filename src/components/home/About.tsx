@@ -14,7 +14,7 @@ const itemVariants = {
 
 const About = () => {
   return (
-    <section className="section-padding bg-white overflow-hidden">
+    <section id="about" className="section-padding bg-white overflow-hidden">
       <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="container-custom grid lg:grid-cols-2 gap-16 items-center">
         {/* Sisi Kiri: Gambar dengan animasi muncul dari kiri */}
         <motion.div variants={itemVariants} className="relative">

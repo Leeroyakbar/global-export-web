@@ -2,20 +2,20 @@
 
 @theme {
   /* Definisikan warna di sini */
-  --color-brand: #064E3B;
-  --color-brand-light: #ECF2F0;
-  --color-brand-dark: #022C22;
-  
-  --color-corporate: #1E293B;
+  --color-brand: #064e3b;
+  --color-brand-light: #ecf2f0;
+  --color-brand-dark: #022c22;
+
+  --color-corporate: #1e293b;
   --color-corporate-light: #334155;
-  --color-corporate-dark: #0F172A;
-  
-  --color-accent-cream: #F5E6D3;
-  --color-accent-gold: #D97706;
-  --color-accent-earth: #78350F;
-  
-  --color-whatsapp: #25D366;
-  --color-surface: #F8FAF8;
+  --color-corporate-dark: #0f172a;
+
+  --color-accent-cream: #f5e6d3;
+  --color-accent-gold: #d97706;
+  --color-accent-earth: #78350f;
+
+  --color-whatsapp: #25d366;
+  --color-surface: #f8faf8;
 }
 
 @layer base {
@@ -23,7 +23,10 @@
     @apply bg-surface text-corporate antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-semibold tracking-tight text-corporate-dark;
   }
 }
@@ -32,7 +35,7 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .section-padding {
     @apply py-16 md:py-24;
   }
@@ -40,4 +43,8 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px; /* Sesuaikan dengan tinggi navbar kamu */
 }
