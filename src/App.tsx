@@ -3,6 +3,8 @@ import Navbar from "./components/common/Navbar"
 import Footer from "./components/common/Footer"
 import Home from "./pages/Home"
 import { Phone } from "lucide-react"
+import AboutPage from "./pages/AboutPage"
+import ProductsPage from "./pages/ProductPage"
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/product" element={<ProductsPage />} />
           </Routes>
         </main>
         <Footer />

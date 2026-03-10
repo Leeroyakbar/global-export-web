@@ -45,13 +45,20 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      // Jika bukan di halaman home, selalu solid (putih)
+      if (location.pathname !== "/") {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(window.scrollY > 20)
+      }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    // Jalankan sekali saat komponen pertama kali dirender
+    handleScroll()
 
+    window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [location.pathname])
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"}`}>
@@ -68,11 +75,11 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) =>
             link.type === "anchor" ? (
-              <button key={link.label} onClick={() => handleAnchorClick(link.href)} className={`text-sm font-medium transition-colors hover:text-brand-light ${isScrolled ? "text-corporate" : "text-white"}`}>
+              <button key={link.label} onClick={() => handleAnchorClick(link.href)} className={`text-sm cursor-pointer font-medium transition-colors hover:text-brand ${isScrolled ? "text-corporate" : "text-white"}`}>
                 {link.label}
               </button>
             ) : (
-              <Link key={link.label} to={link.href} className={`text-sm font-medium transition-colors hover:text-brand-light ${isScrolled ? "text-corporate" : "text-white"}`}>
+              <Link key={link.label} to={link.href} className={`text-sm font-medium transition-colors hover:text-brand ${isScrolled ? "text-corporate" : "text-white"}`}>
                 {link.label}
               </Link>
             ),
@@ -111,8 +118,7 @@ const Navbar = () => {
                   </Link>
                 ),
               )}
-
-              <Link to="/contact" onClick={() => setIsMobileOpen(false)} className="btn-primary text-center mt-3">
+              <Link to="/contact" className={`px-6 py-2 rounded-lg font-bold transition-all ${isScrolled ? "bg-brand text-white hover:bg-brand-dark" : "bg-white text-brand hover:bg-gray-100"}`}>
                 Request Quote
               </Link>
             </div>

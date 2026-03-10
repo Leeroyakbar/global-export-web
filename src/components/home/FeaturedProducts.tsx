@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const products = [
   {
@@ -23,6 +24,8 @@ const products = [
 ]
 
 const FeaturedProducts = () => {
+  const navigate = useNavigate()
+
   return (
     <section id="products" className="section-padding bg-surface">
       <div className="container-custom">
@@ -31,7 +34,7 @@ const FeaturedProducts = () => {
             <h3 className="text-brand font-semibold tracking-wider uppercase mb-2">Our Commodities</h3>
             <h2 className="text-4xl font-bold text-corporate-dark">Featured Export Products</h2>
           </div>
-          <button className="hidden md:flex items-center gap-2 text-brand font-semibold hover:gap-4 transition-all">
+          <button onClick={() => navigate("/product")} className="hidden md:flex items-center gap-2 text-brand font-semibold hover:gap-4 transition-all">
             View All Products <ArrowRight size={20} />
           </button>
         </div>

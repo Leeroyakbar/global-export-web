@@ -36,7 +36,7 @@ const ExportProcess = () => {
               <div className="mb-6 mt-2">
                 <step.icon className="w-10 h-10 text-brand" />
               </div>
-              <h4 className="text-lg font-bold mb-3">{step.title}</h4>
+              <h4 className="text-lg font-bold mb-3 text-brand-light">{step.title}</h4>
               <p className="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
 
               {/* Subtle Arrow Indicator */}

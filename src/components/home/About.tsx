@@ -1,5 +1,6 @@
 import { easeOut, motion } from "framer-motion"
 import { Target, Globe } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 // Variabel animasi untuk reusable
 const containerVariants = {
@@ -13,6 +14,8 @@ const itemVariants = {
 }
 
 const About = () => {
+  const navigate = useNavigate()
+
   return (
     <section id="about" className="section-padding bg-white overflow-hidden">
       <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="container-custom grid lg:grid-cols-2 gap-16 items-center">
@@ -58,7 +61,7 @@ const About = () => {
             </div>
           </div>
 
-          <motion.button whileHover={{ x: 10 }} className="text-brand font-semibold flex items-center gap-2 transition-all">
+          <motion.button whileHover={{ x: 10 }} className="text-brand font-semibold flex items-center gap-2 transition-all" onClick={() => navigate("/about")}>
             Learn More About Our History →
           </motion.button>
         </motion.div>
